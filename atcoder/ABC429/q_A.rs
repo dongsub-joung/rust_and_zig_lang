@@ -1,4 +1,5 @@
 use std::{io::{stdin, BufRead}, process::id};
+use std::io::{self, Write};
 
 fn main() {
     let std= stdin();
@@ -13,8 +14,8 @@ fn main() {
 
     let mut idx= 0;
     while idx < n && idx < m {
-        println!("OK");
-
+        let ok= "OK".trim();
+        print!("{}", ok);
         idx+=1;
     }
 
@@ -23,7 +24,8 @@ fn main() {
     }
 
     loop {
-        println!("Too Many Requests");
+        let out_of_range= "Too Many Requests".trim();
+        print!("{}", out_of_range);
         if idx > m {
             return;
         }
