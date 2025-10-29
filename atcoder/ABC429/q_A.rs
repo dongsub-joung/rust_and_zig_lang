@@ -1,4 +1,4 @@
-use std::io::{stdin, BufRead};
+use std::{io::{stdin, BufRead}, process::id};
 
 fn main() {
     let std= stdin();
@@ -12,9 +12,14 @@ fn main() {
     let m= input_v[1];
 
     let mut idx= 0;
-    while idx < m {
+    while idx < n && idx < m {
         println!("OK");
+
         idx+=1;
+    }
+
+    if n < m {
+        return;
     }
 
     loop {
